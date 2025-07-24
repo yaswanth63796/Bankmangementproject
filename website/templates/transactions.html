@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transaction History</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+
+  <h2>Transaction History</h2>
+
+  <form method="POST" action="{{ url_for('transactions') }}" id="transactionForm">
+    <input type="text" name="account_no" placeholder="Account Number" required>
+    <input type="password" name="pin" placeholder="PIN" required>
+    <button type="submit">Show History</button>
+  </form>
+
+  {% if transactions %}
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Date & Time</th>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Balance After</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for txn in transactions %}
+        <tr>
+          <td>{{ txn.datetime.strftime('%Y-%m-%d %H:%M:%S') if txn.datetime else 'N/A' }}</td>
+          <td>{{ txn.type }}</td>
+          <td>{{ txn.amount }}</td>
+          <td>{{ txn.balance_after }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    {% if request.method == 'POST' %}
+      <p style="color: orange;">No transactions found.</p>
+    {% endif %}
+  {% endif %}
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <p style="color: red;">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+
+  <button onclick="location.href='{{ url_for('home') }}'">🏠 Home</button>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check Balance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+
+<body>
+    <header>
+        <span>Check Your Balance</span>
+    </header>
+
+    <div id="balanceForm" class="form-container">
+        <h2>Enter Account Details</h2>
+        <form method="POST" action="{{ url_for('balance') }}">
+            <input type="text" name="account_no" placeholder="Account Number" required><br><br>
+            <input type="password" name="pin" placeholder="PIN" required><br><br>
+            <button type="submit">Check Balance</button>
+        </form>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% if balance is not none %}
+            <div class="balance-info">
+                <h2>Your Balance:</h2>
+                <p>₹ {{ balance }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <button onclick="location.href='{{ url_for('home') }}'" class="home-button">Home</button>
+
+
+    
+</body>
+</html>

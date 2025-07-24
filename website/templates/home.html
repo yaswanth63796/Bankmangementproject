@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVAI BANK</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+
+    <header>
+        Welcome to covai Bank
+        <p>Your Trusted Financial Partner</p>
+    </header>
+
+    <!-- Loan Offers Running Text -->
+    <div class="marquee">
+        <span>🔥 Gold Loan @ 7.5% | 🏡 Home Loan @ 6.8% | 🎓 Education Loan @ 5.5% | 🚗 Car Loan @ 8.2% | 💳 Personal Loan @ 10.5%</span>
+    </div>
+
+    <div class="image-slider">
+        <div class="slides">
+            <img class="slide active" src="https://images.unsplash.com/photo-1579621970795-87facc2f976d" alt="Banking">
+            <img class="slide" src="https://images.unsplash.com/photo-1563013544-824ae1b704d3" alt="Finance">
+            <img class="slide" src="https://images.unsplash.com/photo-1521540216272-a50305cd4421" alt="Digital Banking">
+        </div>
+    
+        <!-- Navigation Buttons -->
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    
+    <!-- Main Menu -->
+    <div class="container">
+        <button onclick="location.href='{{ url_for('register') }}'">User Registration</button>
+        <button onclick="location.href='{{ url_for('login') }}'">User Login</button>
+        <button onclick="location.href='{{ url_for('create_account') }}'">Account Creation</button>
+        <button onclick="location.href='{{ url_for('deposit') }}'">Deposit Money</button>
+        <button onclick="location.href='{{ url_for('withdraw') }}'">Withdraw Money</button>
+        <button onclick="location.href='{{ url_for('balance') }}'">Check Balance</button>
+        <button onclick="location.href='{{ url_for('transactions') }}'">Transaction History</button>
+       
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>About Us</h3>
+                <p>Transaction Management System helps users securely manage their banking transactions with ease.</p>
+            </div>
+            
+            <div class="footer-section contact">
+                <h3>Contact Us</h3>
+                <p><strong>Address:</strong> 123 Gandhipuram bus stand opp, Coimbatore, 635123</p>
+                <p><strong>Email:</strong> Gayathri23@gmail.com</p>
+                <p><strong>Phone:</strong> +918270759634</p>
+            </div>
+            
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <li><a href="{{ url_for('withdraw') }}">Withdraw</a></li>
+                    <li><a href="{{ url_for('balance') }}">Balance</a></li>
+                    <li><a href="{{ url_for('transactions') }}">Transaction history</a></li>
+                   
+                </ul>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2025 Transaction Management System | Designed by Yaswanth</p>
+        </div>
+    </footer>
+
+</body>
+</html>

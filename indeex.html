@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Account Registration</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Bank Account Registration</h2>
+            <p>Please fill in your details to open a new account</p>
+        </div>
+        
+        <form id="registerForm">
+            <div class="form-section">
+                <h3>Personal Information</h3>
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="full_name" placeholder="Full Name" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-calendar"></i>
+                    <input type="date" name="dob" placeholder="Date of Birth" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-id-card"></i>
+                    <input type="text" name="ssn" placeholder="Social Security Number" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-venus-mars"></i>
+                    <select name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                        <option value="prefer_not_to_say">Prefer not to say</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>Contact Information</h3>
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-phone"></i>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-home"></i>
+                    <input type="text" name="address" placeholder="Home Address" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-city"></i>
+                    <input type="text" name="city" placeholder="City" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-map-pin"></i>
+                    <input type="text" name="state" placeholder="State" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-mail-bulk"></i>
+                    <input type="text" name="zip_code" placeholder="ZIP Code" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>Account Information</h3>
+                <div class="input-group">
+                    <i class="fas fa-piggy-bank"></i>
+                    <select name="account_type" required>
+                        <option value="" disabled selected>Select Account Type</option>
+                        <option value="savings">Savings Account</option>
+                        <option value="checking">Checking Account</option>
+                        <option value="fixed_deposit">Fixed Deposit</option>
+                        <option value="recurring_deposit">Recurring Deposit</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <input type="number" name="initial_deposit" placeholder="Initial Deposit Amount ($)" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-briefcase"></i>
+                    <input type="text" name="occupation" placeholder="Occupation" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-building"></i>
+                    <input type="text" name="employer" placeholder="Employer Name (if applicable)">
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-dollar-sign"></i>
+                    <input type="number" name="annual_income" placeholder="Annual Income ($)" required>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h3>Identity Verification</h3>
+                <div class="input-group">
+                    <i class="fas fa-passport"></i>
+                    <select name="id_type" required>
+                        <option value="" disabled selected>Select ID Type</option>
+                        <option value="passport">Passport</option>
+                        <option value="drivers_license">Driver's License</option>
+                        <option value="state_id">State ID</option>
+                        <option value="military_id">Military ID</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-id-badge"></i>
+                    <input type="text" name="id_number" placeholder="ID Number" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-calendar-check"></i>
+                    <input type="date" name="id_expiry" placeholder="ID Expiry Date" required>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                
+                <div class="checkbox-group">
+                    <input type="checkbox" id="marketing" name="marketing">
+                    <label for="marketing">I would like to receive marketing communications from the bank</label>
+                </div>
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Application</button>
+        </form>
+        
+        <div id="successMessage" class="message-box success hidden">
+            <i class="fas fa-check-circle"></i>
+            <p class="msg">Your application has been submitted successfully! Your application ID is <span id="applicationId"></span></p>
+        </div>
+    </div>
+    
+    <script src="index.js"></script>
+</body>
+</html>

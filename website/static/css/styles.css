@@ -1,0 +1,1041 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #4d7453, #302987);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+header {
+    background: rgba(0, 0, 0, 0.3); 
+    padding: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    color: white;
+    position: relative;
+   overflow: hidden;
+    font-family: 'Playfair Display', serif; /* Updated Font */
+}
+
+
+/* Gradient Overlay Effect */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), transparent);
+    
+}
+
+@keyframes slideOverlay {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Glowing Effect */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    }
+}
+
+header span {
+    display: inline-block;
+    animation: glow 2s infinite alternate;
+}
+
+
+/* Marquee for Loan Offers */
+.marquee {
+    background: linear-gradient(135deg, #1e723b, #2a5298);
+    color: white; 
+    padding: 12px;
+    font-size: 20px; 
+    font-weight: bold;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    letter-spacing: 1px; 
+}
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 8s linear infinite;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+button {
+    background: linear-gradient(45deg, #ff7e5f, #ff4500); /* Warm Orange Gradient */
+    color: white;
+    padding: 15px 25px;
+    font-size: 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+/* Orange glow effect on hover */
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.9); /* Orange glow */
+}
+
+/* Stronger glow when button is clicked */
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 25px rgba(255, 140, 0, 1); /* Stronger Orange glow */
+}
+
+
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+}
+/* Form container styling */
+/* Registration Form Outline Glow Effect */
+#registerForm {
+    max-width: 450px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+
+    /* Stronger glowing effect */
+    border: 5px solid transparent;
+    animation: intenseGlowEffect 1.5s infinite alternate;
+}
+
+/* Keyframes for intense glowing animation */
+@keyframes intenseGlowEffect {
+    0% {
+        box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.7), 
+                    0px 0px 30px rgba(255, 94, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0px 0px 25px rgba(255, 140, 0, 1), 
+                    0px 0px 50px rgba(255, 94, 0, 1);
+    }
+}
+
+/* Form heading */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Input field styling */
+#registerForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Input focus effect */
+#registerForm input:focus {
+    box-shadow: 0px 0px 8px rgba(0, 136, 204, 0.8);
+    transform: scale(1.05);
+}
+
+
+
+/* Keeping the existing button styling */
+
+/* Login Form Styling (Same as Registration Form) */
+#loginForm {
+    max-width: 450px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+
+    /* Stronger glowing effect */
+    border: 5px solid transparent;
+    animation: intenseGlowEffect 1.5s infinite alternate;
+}
+
+/* Keyframes for intense glowing animation */
+@keyframes intenseGlowEffect {
+    0% {
+        box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.7), 
+                    0px 0px 30px rgba(255, 94, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0px 0px 25px rgba(255, 140, 0, 1), 
+                    0px 0px 50px rgba(255, 94, 0, 1);
+    }
+}
+
+/* Form heading */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Input field styling */
+#loginForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Input focus effect */
+#loginForm input:focus {
+    box-shadow: 0px 0px 8px rgba(0, 136, 204, 0.8);
+    transform: scale(1.05);
+}
+
+/* Account Creation Form Styling (Same as Registration & Login Forms) */
+#accountForm {
+    max-width: 450px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+
+    /* Stronger glowing effect */
+    border: 5px solid transparent;
+    animation: intenseGlowEffect 1.5s infinite alternate;
+}
+
+/* Keyframes for intense glowing animation */
+@keyframes intenseGlowEffect {
+    0% {
+        box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.7), 
+                    0px 0px 30px rgba(255, 94, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0px 0px 25px rgba(255, 140, 0, 1), 
+                    0px 0px 50px rgba(255, 94, 0, 1);
+    }
+}
+
+/* Form heading */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Input field styling */
+#accountForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Input focus effect */
+#accountForm input:focus {
+    box-shadow: 0px 0px 8px rgba(0, 136, 204, 0.8);
+    transform: scale(1.05);
+}
+/* Deposit Money Form Styling (Same as Other Forms) */
+#depositForm {
+    max-width: 450px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+
+    /* Stronger glowing effect */
+    border: 5px solid transparent;
+    animation: intenseGlowEffect 1.5s infinite alternate;
+}
+
+/* Keyframes for intense glowing animation */
+@keyframes intenseGlowEffect {
+    0% {
+        box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.7), 
+                    0px 0px 30px rgba(255, 94, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0px 0px 25px rgba(255, 140, 0, 1), 
+                    0px 0px 50px rgba(255, 94, 0, 1);
+    }
+}
+
+/* Form heading */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Input field styling */
+#depositForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Input focus effect */
+#depositForm input:focus {
+    box-shadow: 0px 0px 8px rgba(0, 136, 204, 0.8);
+    transform: scale(1.05);
+}
+/* Withdraw Money Form Styling (Same as Other Forms) */
+#withdrawForm {
+    max-width: 450px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+
+    /* Stronger glowing effect */
+    border: 5px solid transparent;
+    animation: intenseGlowEffect 1.5s infinite alternate;
+}
+
+/* Keyframes for intense glowing animation */
+@keyframes intenseGlowEffect {
+    0% {
+        box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.7), 
+                    0px 0px 30px rgba(255, 94, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0px 0px 25px rgba(255, 140, 0, 1), 
+                    0px 0px 50px rgba(255, 94, 0, 1);
+    }
+}
+
+/* Form heading */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Input field styling */
+#withdrawForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Input focus effect */
+#withdrawForm input:focus {
+    box-shadow: 0px 0px 8px rgba(0, 136, 204, 0.8);
+    transform: scale(1.05);
+}
+/* Withdraw Money Form Styling (Same as Other Forms) */
+#withdrawForm {
+    max-width: 450px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+
+    /* Stronger glowing effect */
+    border: 5px solid transparent;
+    animation: intenseGlowEffect 1.5s infinite alternate;
+}
+
+/* Keyframes for intense glowing animation */
+@keyframes intenseGlowEffect {
+    0% {
+        box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.7), 
+                    0px 0px 30px rgba(255, 94, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0px 0px 25px rgba(255, 140, 0, 1), 
+                    0px 0px 50px rgba(255, 94, 0, 1);
+    }
+}
+
+/* Form heading */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Input field styling */
+#withdrawForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Input focus effect */
+#withdrawForm input:focus {
+    box-shadow: 0px 0px 8px rgba(0, 136, 204, 0.8);
+    transform: scale(1.05);
+}
+/* Balance Checking Form Styling (Same as Other Forms) */
+#balanceForm {
+    max-width: 450px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+
+    /* Stronger glowing effect */
+    border: 5px solid transparent;
+    animation: intenseGlowEffect 1.5s infinite alternate;
+}
+
+/* Keyframes for intense glowing animation */
+@keyframes intenseGlowEffect {
+    0% {
+        box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.7), 
+                    0px 0px 30px rgba(255, 94, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0px 0px 25px rgba(255, 140, 0, 1), 
+                    0px 0px 50px rgba(255, 94, 0, 1);
+    }
+}
+
+/* Form heading */
+h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+/* Input field styling */
+#balanceForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.85); /* Slight transparency */
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Input focus effect */
+#balanceForm input:focus {
+    box-shadow: 0px 0px 8px rgba(0, 136, 204, 0.8);
+    transform: scale(1.05);
+}
+.image-slider {
+    width: 90%;
+    max-width: 900px;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin: 30px auto;
+}
+
+/* Container for slides */
+.slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+}
+
+/* Individual Slide Styling */
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensures full image visibility */
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    border-radius: 10px;
+    border: 5px solid transparent; /* Invisible border for smooth transition */
+}
+
+/* Active Slide with Glowing Orange Outline */
+.slide.active {
+    opacity: 1;
+    animation: glowEffect 1.5s infinite alternate;
+}
+
+/* Glowing Effect Keyframes */
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 140, 0, 0.7), 
+                    0 0 20px rgba(255, 94, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(255, 140, 0, 1), 
+                    0 0 40px rgba(255, 94, 0, 1);
+    }
+}
+
+/* Navigation Buttons */
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+button.prev { left: 10px; }
+button.next { right: 10px; }
+
+button.prev:hover, button.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+/* Transaction History Form Styling */
+#transactionForm {
+    max-width: 450px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+
+    /* Glowing Effect */
+    border: 5px solid transparent;
+    animation: intenseGlowEffect 1.5s infinite alternate;
+}
+
+/* Glowing Animation */
+@keyframes intenseGlowEffect {
+    0% {
+        box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.7), 
+                    0px 0px 30px rgba(255, 94, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0px 0px 25px rgba(255, 140, 0, 1), 
+                    0px 0px 50px rgba(255, 94, 0, 1);
+    }
+}
+
+/* Input Fields */
+#transactionForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.85);
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Input Focus Effect */
+#transactionForm input:focus {
+    box-shadow: 0px 0px 8px rgba(0, 136, 204, 0.8);
+    transform: scale(1.05);
+}
+
+/* View Transactions Button */
+#transactionForm button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff8800, #ff4400);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#transactionForm button:hover {
+    background: linear-gradient(45deg, #ff4400, #ff8800);
+    transform: scale(1.05);
+}
+
+/* Transaction Result Styling */
+#transactionResult {
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* Home Button */
+.home-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #ff5500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background: #ff2200;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #222;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.footer-section {
+    width: 30%;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    color: #f2a900;
+    margin-bottom: 10px;
+}
+
+.footer-section p, .footer-section ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #f2a900;
+}
+
+.footer-bottom {
+    margin-top: 15px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*transaction result
+
+#transactionResult {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: linear-gradient(blue, pink);
+    border: 1px solid #ccc;
+  }
+
+  .transaction-entry {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .action-section {
+    margin-top: 20px;
+  } 
+  
+
+  button {
+    margin: 5px;
+    padding: 10px;   
+    cursor: pointer;
+  }
+
+
+
+
+  .transaction-table {
+    width: 80%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.transaction-table th, .transaction-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+
+.transaction-table thead {
+    background-color: #009879;
+    color: #ffffff;
+}
+
+.transaction-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.transaction-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.transaction-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.flash {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: bold;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.flash.danger {
+    background: #ff4d4d;
+    color: white;
+}
+    */
+
+
+/* Transaction History Form Styling */
+#transactionForm {
+    max-width: 450px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+
+    /* Glowing Effect */
+    border: 5px solid transparent;
+    animation: intenseGlowEffect 1.5s infinite alternate;
+}
+
+/* Glowing Animation */
+@keyframes intenseGlowEffect {
+    0% {
+        box-shadow: 0px 0px 15px rgba(255, 140, 0, 0.7), 
+                    0px 0px 30px rgba(255, 94, 0, 0.9);
+    }
+    100% {
+        box-shadow: 0px 0px 25px rgba(255, 140, 0, 1), 
+                    0px 0px 50px rgba(255, 94, 0, 1);
+    }
+}
+
+/* Input Fields */
+#transactionForm input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #333;
+    background: rgba(255, 255, 255, 0.85);
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+}
+
+/* Input Focus Effect */
+#transactionForm input:focus {
+    box-shadow: 0px 0px 8px rgba(0, 136, 204, 0.8);
+    transform: scale(1.05);
+}
+
+/* View Transactions Button */
+#transactionForm button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff8800, #ff4400);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+#transactionForm button:hover {
+    background: linear-gradient(45deg, #ff4400, #ff8800);
+    transform: scale(1.05);
+}
+
+/* Transaction Result Styling */
+#transactionResult {
+    max-width: 600px;
+    margin: 20px auto;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+/* Home Button */
+.home-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #ff5500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.home-btn:hover {
+    background: #ff2200;
+    transform: scale(1.05);
+}
+
+
+
+
+
+/*flash message*/
+
+.flash-message {
+  padding: 10px;
+  margin: 10px auto;
+  width: 60%;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Flash color for success */
+.flash-message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+  }
+  
+  /* Flash color for error or danger */
+  .flash-message.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+
+  /*home button designing for withdraw balance check and */
+  .home-button {
+    background-color: #4CAF50; /* Green like register button */
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.home-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+table {
+    margin: 30px auto;
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 700px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  
+  thead {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  
+  th, td {
+    padding: 12px 16px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+  }
+  
